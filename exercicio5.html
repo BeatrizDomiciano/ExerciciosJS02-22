@@ -1,0 +1,77 @@
+<!--Ler 3 números, os possíveis lados de um triângulo, e imprimir a classificação de acordo com tamanho dos lados-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIANGULO?</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgba(136, 221, 188, 0.541) ;
+            color:rgba(5, 46, 30, 0.973) ;
+            text-align: center;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgba(5, 46, 30, 0.973) ;
+            background: rgba(68, 228, 166, 0.973) ;
+        }
+        input{
+            font:  bold Times;
+            color:rgba(5, 46, 30, 0.973) ;
+            background: rgb(136, 221, 188) ;
+            margin:1%;
+        }
+        input#enviar{
+            color:rgba(5, 46, 30, 0.973) ;
+            background: rgba(68, 228, 166, 0.973) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+    </style>
+
+    <script>
+       
+        function triangulo(){
+            var num1 = window.document.getElementById('num1')
+            var num2 = window.document.getElementById('num2')
+            var num3 = window.document.getElementById('num3')
+            var result = window.document.querySelector('div#result')
+            var n1 = Number (num1.value)
+            var n2 = Number (num2.value)
+            var n3 = Number (num3.value)
+
+            if(n1<n2+n3 && n2<n1+n3 && n3<n1+n2){
+                result.innerHTML = `Estes valores formam um triângulo!`
+             if (n1==n2 && n2==n3){
+                result.innerHTML = `Triângulo Equilatero`
+            }else if (n1==n2 || n2==n3 || n1==n3){
+                result.innerHTML = `Triângulo Isoceles`
+            }else if (n1!=n2 && n2!=n3 && n1!=n3){
+                result.innerHTML = `Triângulo Escaleno`
+            } 
+            }else {
+                result.innerHTML = `Estes valores não formam um triangulo!`
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>QUAL TRIÂNGULO?</h1>
+    Digite três números e veremos qual triângulo formará 
+    <br>
+    <input type="number" name="num1" id="num1"> 
+    <input type="number" name="num2" id="num2">
+    <input type="number" name="num3" id="num3">
+    <br>
+    <input type="button"  value="Enviar" id="enviar" onclick="triangulo()">
+    <br>
+    <div id= "result"></div>
+</body>
+</html>

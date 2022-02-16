@@ -1,0 +1,75 @@
+<!--Entrar com 3 números e imprimi-los em ordem decrescente (suponha números diferentes)-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVISOR</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgba(221, 215, 130, 0.144) ;
+            color:rgb(71, 67, 5) ;
+            text-align: center;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(71, 67, 5) ;
+            background: rgb(233, 221, 51) ;
+        }
+        input{
+            font:  bold Times;
+            color:rgb(71, 67, 5) ;
+            background: rgba(233, 221, 51, 0.329) ;
+            margin:1%;
+        }
+        input#enviar{
+            color:rgb(71, 67, 5) ;
+            background: rgb(233, 221, 51) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+    </style>
+
+    <script>
+       function decrescente(){
+            var num1 = window. document.getElementById('num1')
+            var num2 = window. document.getElementById('num2')
+            var num3 = window. document.getElementById('num3')
+            var result = window.document.querySelector('div#result')
+            var n1 = Number (num1.value)
+            var n2 = Number (num2.value)
+            var n3 = Number (num3.value)
+            
+            if (n1>=n2 && n1>=n3 && n2>= n3){
+                result.innerHTML = `A ordem decrescente dos números é ${n1}, ${n2} e ${n3}`
+            } else if (n1>=n2 && n1>=n3 && n3>=n2){
+                result.innerHTML = `A ordem decrescente dos números é ${n1}, ${n3} e ${n2}`
+            } else if (n2>=n1 && n2>=n3 && n1>=n3) {
+                result.innerHTML = `A ordem decrescente dos números é ${n2}, ${n1} e ${n3}`
+            } else if (n2>=n1 && n2>=n3 && n3>=n1){
+                result.innerHTML = `A ordem decrescente dos números é ${n2}, ${n3} e ${n1}`
+            } else if (n3>=n1 && n3>=n3 && n1>=n2){
+                result.innerHTML = `A ordem decrescente dos números é ${n3}, ${n1} e ${n2}`
+            }  else if (n3>=n1 && n3>=n3 && n2>=n1){
+                result.innerHTML = `A ordem decrescente dos números é ${n3}, ${n2} e ${n1}`
+            }
+       }
+      
+    </script>
+</head>
+<body>
+    <h1>ORDEM DECRESCENTE</h1>
+   Digite 3 números:  <input type="number" name="num1" id="num1"> + 
+   <input type="number" name="num2" id="num2">
+   <input type="number" name="num3" id="num3">
+   <input type="button"  value="Enviar" id="enviar" onclick="decrescente()">
+   <br>
+   <div id= "result"></div>
+</body>
+</html>

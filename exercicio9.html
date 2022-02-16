@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOL</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgba(245, 187, 214, 0.288) ;
+            color:rgba(66, 5, 33, 0.993) ;
+            text-align: center;
+        }
+        input{
+            font:  bold Times;
+            color:rgba(66, 5, 33, 0.993) ;
+            background: rgba(245, 187, 214, 0.932) ;
+            margin:1%;
+        }
+        input#ok{
+            color:rgba(66, 5, 33, 0.993) ;
+            background:rgba(245, 187, 214, 0.932) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+            width: 10%;
+        }
+        div#result{
+            font: italic bold 20pt Times;
+            text-align: center;
+            color:rgba(66, 5, 33, 0.993) ;
+            
+        }
+    </style>
+
+    <script>
+        function qntsol(){
+            var num = window.document.getElementById('num')
+            var result = window.document.querySelector('div#result')
+            var n = Number (num.value)
+            var i = 0
+            var res = ""
+
+            for(;i<n;i++){
+                res = "SOL \r\n<br/>  " + res
+                result.innerHTML =  res 
+            }
+        }
+
+    </script>
+</head>
+<body>
+    Quantas vezes você quer SOL? <input type="number" name="num" id="num">
+    <input type="button"  value="OK" id="ok" onclick="qntsol()">
+    <br>
+    <div id= "result"></div>
+</body>
+</html>

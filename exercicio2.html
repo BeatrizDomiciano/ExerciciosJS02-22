@@ -1,0 +1,67 @@
+<!--Entrar com um número e informar se ele é divisível por 10, por 5, 
+por 2 ou se não é divisível por nenhum destes-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIVISOR</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgba(173, 130, 221, 0.144) ;
+            color:rgb(31, 3, 63) ;
+            text-align: center;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(31, 3, 63) ;
+            background: rgb(173, 130, 221) ;
+        }
+        input{
+            font:  bold Times;
+            color:rgb(31, 3, 63) ;
+            background: rgba(173, 130, 221, 0.664) ;
+            margin:1%;
+        }
+        input#enviar{
+            color:rgb(31, 3, 63) ;
+            background: rgb(173, 130, 221) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+    </style>
+
+    <script>
+       
+        function divisor(){
+            var num = window.document.getElementById('num')
+            var result = window.document.querySelector('div#result')
+            var n = Number (num.value)
+
+            if (n % 10 == 0){
+                result.innerHTML = `O número ${n} é divisível por 10`
+            }else if (n % 5 == 0){
+                result.innerHTML = `O número ${n} é divisível por 5`
+            }else if (n % 2 == 0){
+                result.innerHTML = `O número ${n} é divisível por 2`
+            } else {
+                result.innerHTML = `O número ${n} não é divisível por 10, 5 ou 2`
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>DIVISOR</h1>
+    Digite um número: 
+    <input type="number" name="num" id="num">
+    <input type="button"  value="Enviar" id="enviar" onclick="divisor()">
+    <br>
+    <div id= "result"></div>
+</body>
+</html>

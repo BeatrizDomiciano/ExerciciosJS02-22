@@ -1,0 +1,71 @@
+<!--Construir um algoritmo que leia 2 números e efetue a adição. 
+Caso o valor somado seja maior que 20, este deverá ser apresentando somando-se a ele mais 8; 
+caso o valor somado seja menor ou igual a 20, este deverá ser apresentado subtraindo-se 5-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMADOR</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgba(165, 201, 247, 0.267) ;
+            color:rgb(3, 33, 71) ;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(5, 49, 107) ;
+            background: rgb(162, 202, 255);
+        }
+        input{
+            font:  bold Times;
+            color:rgb(3, 33, 71) ;
+            background: rgb(162, 202, 255);
+            margin:1%;
+        }
+        input#enviar{
+            color:rgb(3, 33, 71) ;
+            background: rgb(162, 202, 255);
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+    </style>
+
+    <script>
+        function somar(){
+            var num1 = window. document.getElementById('num1')
+            var num2 = window. document.getElementById('num2')
+            var result = window.document.querySelector('div#result')
+            var n1 = Number (num1.value)
+            var n2 = Number (num2.value)
+            var soma = n1 + n2
+            var res
+
+            if(soma>20){
+                res = soma + 8
+                result.innerHTML = `O resultado + 8 é ${res}`
+            } else{
+                res = soma - 5
+                result.innerHTML = `O resultado - 5 é ${res}`
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>SOMADOR</h1>
+    Digite 2 números: <input type="number" name="num1" id="num1"> + 
+    <input type="number" name="num2" id="num2">
+    <input type="button"  value="Enviar" id="enviar" onclick="somar()">
+    <br>
+    <div id= "result"></div>
+</body>
+</html>
+
+    

@@ -1,0 +1,67 @@
+<!--Criar um algoritmo que leia um número e imprima todos os números de 1 até ele e o seu produto-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMEROS</title>
+
+    <style>
+         body{
+            background: rgba(191, 235, 245, 0.842);
+        }
+        input{
+            font:  bold Times;
+            color:rgb(70,97,79) ;
+            background: rgba(188,235,183) ;
+            margin:1%;
+        }
+        input#ok{
+            color:rgb(70,97,79) ;
+            background:rgba(188,235,183) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+            width: 10%;
+        }
+        div#result{
+            font: italic bold 20pt Times;
+            text-align: center;
+            color:rgb(70,97,79) ;
+        }
+        div#body{
+            font: bold 18pt Times;
+            text-align: center;
+            color:rgb(44, 61, 50) ;
+        }
+    </style>
+
+    <script>
+        function sequencia(){
+            var n = parseInt(document.getElementById("num").value);
+            var result = window.document.querySelector('div#result')
+            var soma = 0
+            var prod
+            r = ""
+
+            for(i = 1;  i <= n; i++){
+               prod = prod * i  
+               r += `${i} \n\n` 
+               result.innerHTML= `${r}\r\n<br/> O produto desses números é: ${prod}` 
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id=" body">
+        Digite um número  <input type="number" name="num" id="num">
+        <input type="button"  value="OK" id="ok" onclick="sequencia()">
+    <br>
+    </div>
+    <div id= "result"></div>
+</body>
+</html>

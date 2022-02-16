@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUMEROS</title>
+
+    <style>
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            background-color: rgba(185, 181, 181, 0.993);
+        }    
+        input#ok{
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+            width: 10%;
+        } 
+        input{
+            font:  bold Times;
+            margin:1%;
+        }
+        div#body{
+            font:  bold Times;
+            text-align: justify;
+        }   
+        div#recibo{
+            font: italic bold 20pt Times;
+            text-align: justify;
+            margin-left: 35%;
+        } 
+    </style>
+
+    <script>
+        function recibo(){
+            var nome = window. document.getElementById('nome')
+            var cargo = window. document.getElementById('cargo')
+            var livro = window. document.getElementById('livro')
+            var data = window. document.getElementById('data')
+            var recibo = window.document.getElementById('recibo')
+
+            var n = String (nome.value)
+            var c = String (cargo.value)
+            var l = String (livro.value)
+            var d = String (data.value)
+
+            if(c=="Professor"|| c=="professor" || c=="Professora"|| c=="professora"){
+                recibo.innerHTML = `-----RECIBO-----\r\n<br/>
+                ${c}: ${n}\r\n<br/> 
+                Livro: ${l}\r\n<br/> 
+                Prazo de devolução de 10 dias a partir da data ${d}`
+            } else if(c =="Aluno"|| c=="aluno" || c =="Aluna"|| c=="aluna"){
+                recibo.innerHTML = `-----RECIBO-----\r\n<br/>
+                ${c}: ${n}\r\n<br/> 
+                Livro: ${l}\r\n<br/> 
+                Prazo de devolução de 3 dias a partir da data ${d}`
+            } else{
+                recibo.innerHTML = `${n}, você não pode pegar livros conosco. \r\n<br/>
+                Favor entrar em contato com a secretaria`
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>RECIBO LIVROS</h1>
+    <div id=" body">
+        Nome: <input type="text" name="nome" id="nome"> <br>
+        Cargo (Aluno/Professor): <input type="text" name="cargo" id="cargo"> <br>
+        Livro: <input type="text" name="livro" id="livro"> <br>
+        Data: <input type="text" name="data" id="data"> <br>
+        <input type="button"  value="OK" id="ok" onclick="recibo()">
+        <br>
+    </div>
+    <div id= "recibo"></div>
+</body>
+</html>

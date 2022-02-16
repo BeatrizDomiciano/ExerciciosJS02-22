@@ -1,0 +1,74 @@
+<!--Criar um algoritmo que imprima a tabuada de um número-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABUADA</title>
+
+    <style>
+        body{
+            background: rgba(211, 149, 124, 0.705);
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(82, 10, 2) ;
+            background: rgb(237,187,83) ;
+        }
+        input{
+            font:  bold Times;
+            color:rgb(77,34,29) ;
+            background: rgba(247, 167, 87, 0.479) ;
+            margin:1%;
+        }
+        input#ok{
+            color:rgb(77,34,29) ;
+            background:rgba(247,167,87) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+            width: 10%;
+        }
+        div#result{
+            font: italic bold 20pt Times;
+            text-align: justify;
+            color:rgb(82, 10, 2) ;
+            margin-left: 47%;
+        }
+        div#body{
+            font: bold 18pt Times;
+            text-align: center;
+            color:rgb(77,34,29) ;
+        }
+    </style>
+
+    <script>
+        function tabuada(){
+            var num = parseInt(document.getElementById("num").value);
+            var result = document.getElementById('result');
+            var tabuada='';
+            var r
+
+            for(var i=1; i<=10 ; i++){
+                r = num*i
+                tabuada += `${num} x ${i} = ${r}\r\n<br/>`;
+                result.innerHTML = tabuada
+            }
+           
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>TABUADAS</h1>
+    <div id ="body">
+        Digite um número  <input type="number" name="num" id="num">
+        <input type="button"  value="OK" id="ok" onclick="tabuada()">
+        <br>
+    </div>
+    <div id= "result"></div>
+</body>
+</html>

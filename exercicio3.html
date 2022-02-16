@@ -1,0 +1,66 @@
+<!--Entrar com nome, sexo e idade de uma pessoa. 
+Se a pessoa for do sexo feminino e tiver menos que 25 anos, 
+imprimir nome e a a mensagem: ACEITA. Caso contrário, imprimir nome e a mensagem: NÃO ACEITA.-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+
+    <style>
+        body {
+            font: normal 18pt Times;
+            background:rgb(253, 227, 177);
+            color:chocolate ;
+            text-align: center;
+        }
+        input{
+            font:   Times;
+            color:black ;
+            background: rgb(247, 142, 5);
+            margin:1%;
+        }
+        input#confirm{
+            color:chocolate ;
+            background: rgb(255, 190, 105);
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:chocolate ;
+            background: rgb(255, 190, 105);
+        }
+    </style>
+    
+    <script>
+        function aceitar(){
+            var nome = window. document.getElementById('nome')
+            var sexo = window. document.getElementById('sexo')
+            var idade = window. document.getElementById('idade')
+            var n = String (nome.value)
+            var s = String (sexo.value)
+            var i = Number (idade.value)
+
+            if ((s =="F"|| s =="f") && i <25){
+               alert (`Bem vinda ${n} você foi ACEITA`)   
+            } else{
+                alert (`${n}, infelizmente você NÃO FOI ACEITO`)
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>CADASTRO</h1>
+    Nome: <input type="text" name="nome" id="nome"> 
+    Sexo (F/M): <input type="text" name="sexo" id="sexo">
+    Idade: <input type="number" name="idade" id="idade">
+    <br>
+    <input type="button"  value="Confirmar" id="confirm" onclick="aceitar()">
+</body>   
+</html>

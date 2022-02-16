@@ -1,0 +1,103 @@
+<!--Ler um número inteiro entre 1 e 12 e escrever o mês correspondente. 
+Caso o número seja fora desse intervalo, informar que não existe mês com este número-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESES</title>
+
+    <style>
+         body {
+            font: normal 18pt Times;
+            background:rgba(130, 221, 217, 0.404) ;
+            color:rgb(2, 59, 57) ;
+            text-align: center;
+        }
+        h1{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(2, 59, 57) ;
+            background: rgba(130, 221, 217, 0.986) ;
+        }
+        input{
+            font:  bold Times;
+            color:rgb(2, 59, 57) ;
+            background: rgba(130, 221, 217, 0.623) ;
+            margin:1%;
+        }
+        input#enviar{
+            color:rgb(2, 59, 57) ;
+            background:rgba(130, 221, 217, 0.986) ;
+            font: bold 15pt Times;
+            margin:1%;
+            float:center;
+        }
+        div#result{
+            font: italic bold 30pt Times;
+            text-align: center;
+            color:rgb(7, 143, 138) ;
+            
+        }
+    </style>
+
+    <script>
+        function mes(){
+            var num = window.document.getElementById('num')
+            var result = window.document.querySelector('div#result')
+            var n = Number (num.value)
+            switch (n){
+                case 1:
+                    result.innerHTML = `Janeiro`
+                    break;
+                case 2:
+                    result.innerHTML = `Fevereiro`
+                    break;
+                case 3:
+                    result.innerHTML = `Março`
+                    break;
+                case 4:
+                    result.innerHTML = `Abril`
+                    break;
+                case 5:
+                    result.innerHTML = `Maio`
+                    break;
+                case 6:
+                    result.innerHTML = `Junho`
+                    break;
+                case 7:
+                    result.innerHTML = `Julho`
+                    break;
+                case 8:
+                    result.innerHTML = `Agosto`
+                    break;
+                case 9:
+                    result.innerHTML = `Setembro`
+                    break;
+                case 10:
+                    result.innerHTML = `Outubro`
+                    break;
+                case 11:
+                    result.innerHTML = `Novembro`
+                    break;
+                case 12:
+                    result.innerHTML = `Dezembro`
+                    break;
+                default:
+                    result.innerHTML = `Valor não corresponde a nenhum mês!!!`
+            }
+        }
+        
+    </script>
+
+</head>
+<body>
+    <h1>QUAL MÊS?</h1>
+    Digite um núemro de 1 a 12: <input type="number" name="num" id="num">
+    <input type="button"  value="Enviar" id="enviar" onclick="mes()">
+    <br>
+    <div id= "result"></div>
+</body>
+</html>
