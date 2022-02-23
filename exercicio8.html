@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NUMEROS</title>
-
     <style>
          body{
             background: rgba(191, 235, 245, 0.842);
@@ -37,23 +36,18 @@
             color:rgb(44, 61, 50) ;
         }
     </style>
-
     <script>
         function sequencia(){
             var n = parseInt(document.getElementById("num").value);
             var result = window.document.querySelector('div#result')
-            var soma = 0
-            var prod
+            var prod = 1
             r = ""
-
             for(i = 1;  i <= n; i++){
                prod = prod * i  
                r += `${i} \n\n` 
                result.innerHTML= `${r}\r\n<br/> O produto desses números é: ${prod}` 
             }
-
         }
-
     </script>
 </head>
 <body>
